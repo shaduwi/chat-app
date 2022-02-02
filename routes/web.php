@@ -25,7 +25,8 @@ Route::post('/sendMessage', function (Request $request) {
     event(
         new Message(
             $request->input('username'),
-            $request->input('message')
+            $request->input('message'),
+            $request->input('color')
         )
     );
     return ["success" => true];

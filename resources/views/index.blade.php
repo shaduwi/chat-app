@@ -11,7 +11,7 @@
     <div class="app">
         <header class="flex flex-col place-items-center bg-gray-800 text-white p-5 shadow">
             <h1 class="text-4xl mb-4">Hi!</h1>
-            <input class="border-2 border-gray-200 rounded p-2 w-1/2 text-center text-black shadow-lg focus:shadow" type="text" name="username" id="username" placeholder="enter your name :)">
+            <input class="border-2 border-gray-200 rounded p-2 w-1/2 text-center text-black shadow-lg focus:shadow" type="text" name="username" id="username" placeholder="enter your name :)" autocomplete="off">
         </header>
         <div id="messages" class="overflow-y-scroll"></div>
         <form class="bottom-0 fixed flex w-screen m-2 justify-evenly" id="messageForm">

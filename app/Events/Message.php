@@ -16,16 +16,18 @@ class Message implements ShouldBroadcast
 
     public $username;
     public $message;
+    public $color;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($username, $message)
+    public function __construct($username, $message, $color)
     {
         $this->username = $username;
         $this->message = $message;
+        $this->color = $color;
     }
 
     /**
@@ -37,7 +39,8 @@ class Message implements ShouldBroadcast
     {
         return new Channel('chat');
     }
-    public function broadcastAs(){
+    public function broadcastAs()
+    {
         return 'message';
     }
 }

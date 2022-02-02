@@ -2065,7 +2065,12 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 var usernameInput = document.getElementById("username");
 var messageInput = document.getElementById("message");
 var messages = document.getElementById("messages");
-var form = document.getElementById("messageForm");
+var form = document.getElementById("messageForm"); //creates array for colors
+
+var colorArr = ["red", "blue", "teal", "green", "yellow", "orange", "pink", "purple"]; //sets variable color to a random index of the colorArr
+
+var randomIndex = Math.floor(Math.random() * colorArr.length);
+color = colorArr[randomIndex];
 form.addEventListener("submit", function (e) {
   //prevents page from refreshing
   e.preventDefault(); //checks if username or message is empty, null or a whitespace
@@ -2078,7 +2083,7 @@ form.addEventListener("submit", function (e) {
   if (messageInput.value == null || messageInput.value.trim() === "") {
     alert("You need to enter a message");
     return;
-  } //sets options for axios
+  } //sets data options for axios
 
 
   var options = {
@@ -2086,7 +2091,8 @@ form.addEventListener("submit", function (e) {
     url: "/sendMessage",
     data: {
       username: usernameInput.value,
-      message: messageInput.value
+      message: messageInput.value,
+      color: color
     }
   }; //resets value of messageInput after sending message
 
@@ -2095,7 +2101,7 @@ form.addEventListener("submit", function (e) {
 }); //adds messages to chat
 
 window.Echo.channel("chat").listen(".message", function (e) {
-  messages.innerHTML += '<div class="shadow bg-gray-200 border-gray-800 border-2 p-1 rounded m-4 w-max"><strong>' + e.username + "</strong>: " + e.message + "</div>";
+  messages.innerHTML += '<div class="shadow bg-gray-200 border-gray-800 border-2 p-1 rounded m-4 w-max"><strong style="color:' + e.color + '";">' + e.username + "</strong>: " + e.message + "</div>";
 });
 
 /***/ }),
