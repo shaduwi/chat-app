@@ -1,5 +1,5 @@
 ## About
-This is a very simpel chat app written with laravel using pusher
+This is a very simple chat app written with laravel using pusher
 
 ## Install
 1. clone project
