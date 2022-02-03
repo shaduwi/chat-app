@@ -22,10 +22,10 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(UrlGenerator $url)
     {
-        if (env('REDIRECT_HTTPS')) {
-            /URL::forceScheme('https');
+        if (env('APP_ENV') === 'production') {
+            $this->app['request']->server->set('HTTPS', true);
         }
     }
 }
