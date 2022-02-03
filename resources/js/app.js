@@ -51,14 +51,27 @@ form.addEventListener("submit", function (e) {
     axios(options);
 });
 
-//adds messages to chat
-window.Echo.channel("chat").listen(".message", (e) => {
+function newMessage(e) {
+    let currTime = new Date().toTimeString().slice(0, 5);
     messages.innerHTML +=
-        '<div class="shadow bg-gray-200 border-gray-800 border-2 p-1 rounded m-4 w-max"><strong style="color:' +
+        '<div class="drop-shadow bg-white bg-opacity-20 border-gray-800 border-2 p-1 rounded m-4 w-max text-white flex flex-row items-center"> <span class="text-white text-opacity-50 text-[.6rem] mr-1">[' +
+        currTime +
+        ']</span> <strong style="color:' +
         e.color +
         '";">' +
         e.username +
         "</strong>: " +
         e.message +
         "</div>";
+}
+
+function testMessage(amount) {
+    for (i = 0; i < amount; i++) {
+        newMessage("");
+    }
+}
+
+//adds messages to chat
+window.Echo.channel("chat").listen(".message", (e) => {
+    newMessage(e);
 });
