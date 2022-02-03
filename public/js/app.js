@@ -2065,12 +2065,17 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 var usernameInput = document.getElementById("username");
 var messageInput = document.getElementById("message");
 var messages = document.getElementById("messages");
-var form = document.getElementById("messageForm"); //creates array for colors
+var form = document.getElementById("messageForm");
+var WelcomeMsgCont = document.getElementById("welcomeMessage");
+
+function randomIndexer(array) {
+  return array[Math.floor(Math.random() * array.length)];
+} //creates array for colors
+
 
 var colorArr = ["red", "blue", "teal", "green", "yellow", "orange", "pink", "purple"]; //sets variable color to a random index of the colorArr
 
-var randomIndex = Math.floor(Math.random() * colorArr.length);
-color = colorArr[randomIndex];
+color = randomIndexer(colorArr);
 form.addEventListener("submit", function (e) {
   //prevents page from refreshing
   e.preventDefault(); //checks if username or message is empty, null or a whitespace
@@ -2099,6 +2104,9 @@ form.addEventListener("submit", function (e) {
   messageInput.value = "";
   axios(options);
 });
+var msgArr = ["Hi!", "Welcome!", "How are you?"];
+WelcomeMsg = randomIndexer(msgArr);
+WelcomeMsgCont.innerHTML = '<h1 class="text-[4rem] mb-4">' + WelcomeMsg + "</h1>";
 
 function newMessage(e) {
   var currTime = new Date().toTimeString().slice(0, 5);

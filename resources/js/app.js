@@ -4,6 +4,11 @@ const usernameInput = document.getElementById("username");
 const messageInput = document.getElementById("message");
 const messages = document.getElementById("messages");
 const form = document.getElementById("messageForm");
+const WelcomeMsgCont = document.getElementById("welcomeMessage");
+
+function randomIndexer(array) {
+    return array[Math.floor(Math.random() * array.length)];
+}
 
 //creates array for colors
 const colorArr = [
@@ -18,8 +23,7 @@ const colorArr = [
 ];
 
 //sets variable color to a random index of the colorArr
-const randomIndex = Math.floor(Math.random() * colorArr.length);
-color = colorArr[randomIndex];
+color = randomIndexer(colorArr);
 
 form.addEventListener("submit", function (e) {
     //prevents page from refreshing
@@ -50,6 +54,11 @@ form.addEventListener("submit", function (e) {
     messageInput.value = "";
     axios(options);
 });
+
+const msgArr = ["Hi!", "Welcome!", "How are you?"];
+WelcomeMsg = randomIndexer(msgArr);
+WelcomeMsgCont.innerHTML =
+    '<h1 class="text-[4rem] mb-4">' + WelcomeMsg + "</h1>";
 
 function newMessage(e) {
     let currTime = new Date().toTimeString().slice(0, 5);
