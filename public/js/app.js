@@ -2100,7 +2100,7 @@ form.addEventListener("submit", function (e) {
     return;
   }
 
-  if (messageInput.value.length > 50) {
+  if (messageInput.value.length > 200) {
     alert("Your message is too long");
     return;
   } //sets data options for axios

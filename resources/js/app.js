@@ -51,7 +51,7 @@ form.addEventListener("submit", function (e) {
         alert("Your username is too long");
         return;
     }
-    if (messageInput.value.length > 50) {
+    if (messageInput.value.length > 200) {
         alert("Your message is too long");
         return;
     }
