@@ -62,10 +62,11 @@ form.addEventListener("submit", function (e) {
     axios(options);
 });
 
+//new message helper
 function newMessage(e) {
     let currTime = new Date().toTimeString().slice(0, 5);
     messages.innerHTML +=
-        '<div class="drop-shadow bg-white bg-opacity-20 border-gray-800 border-2 p-1 rounded m-4 w-max text-white flex flex-row items-center"> <span class="text-white text-opacity-50 text-[.6rem] mr-1">[' +
+        '<div class="drop-shadow bg-white bg-opacity-40 border-gray-800 border-2 p-1 rounded m-4 w-max text-white flex flex-row items-center"> <span class="text-white text-opacity-70 text-[.6rem] mr-1">[' +
         currTime +
         ']</span> <strong style="color:' +
         e.color +
