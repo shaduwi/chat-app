@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <title>Chat</title>
 </head>
-<body class="bg-gray-900">
-    <div class="app flex flex-col justify-between h-screen">
+<body class="bg-gray-900 flex min-h-screen">
+    <div class="app flex flex-col justify-between">
         <header class="flex flex-col place-items-center w-screen bg-gray-800 text-white p-4 drop-shadow">
             <span id="welcomeMessage"></span>
             <input class="rounded p-2 w-72 text-center text-black drop-shadow-lg focus:drop-shadow" type="text" name="username" id="username" placeholder="enter your name :)" autocomplete="off">
