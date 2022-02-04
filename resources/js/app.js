@@ -22,8 +22,15 @@ const colorArr = [
     "purple",
 ];
 
-//sets variable color to a random index of the colorArr
+//creates array for welcome messages
+const msgArr = ["Hi!", "Welcome!"];
+
+//sets variable color to a random index of the colorArr/msgArr
 color = randomIndexer(colorArr);
+WelcomeMsg = randomIndexer(msgArr);
+
+WelcomeMsgCont.innerHTML =
+    '<h1 class="text-[4rem] mb-4">' + WelcomeMsg + "</h1>";
 
 form.addEventListener("submit", function (e) {
     //prevents page from refreshing
@@ -54,11 +61,6 @@ form.addEventListener("submit", function (e) {
     messageInput.value = "";
     axios(options);
 });
-
-const msgArr = ["Hi!", "Welcome!", "How are you?"];
-WelcomeMsg = randomIndexer(msgArr);
-WelcomeMsgCont.innerHTML =
-    '<h1 class="text-[4rem] mb-4">' + WelcomeMsg + "</h1>";
 
 function newMessage(e) {
     let currTime = new Date().toTimeString().slice(0, 5);
