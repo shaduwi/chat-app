@@ -46,6 +46,16 @@ form.addEventListener("submit", function (e) {
         return;
     }
 
+    //checks if username or message is longer than a set value
+    if (usernameInput.value.length > 20) {
+        alert("Your username is too long");
+        return;
+    }
+    if (messageInput.value.length > 50) {
+        alert("Your message is too long");
+        return;
+    }
+
     //sets data options for axios
     const options = {
         method: "post",
