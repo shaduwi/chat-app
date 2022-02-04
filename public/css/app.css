@@ -456,6 +456,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .flex-grow {
   flex-grow: 1;
 }
+.flex-grow-0 {
+  flex-grow: 0;
+}
 .resize-none {
   resize: none;
 }
